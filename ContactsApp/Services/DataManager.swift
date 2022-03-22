@@ -37,3 +37,21 @@ class DataManager {
     ]
 
 }
+
+extension DataManager {
+static func getPersonList() -> [Person] {
+    
+    var persons: [Person] = []
+    let dataManager = DataManager.dataManager
+    
+    for iteration in 0...(dataManager.names.count - 1) {
+        let person = Person(name: dataManager.names[iteration],
+                            surname: dataManager.surnames[iteration],
+                            email: dataManager.emails[iteration],
+                            phone: dataManager.phones[iteration])
+        persons.append(person)
+    }
+    return persons
+}
+}
+

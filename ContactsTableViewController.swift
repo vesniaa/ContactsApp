@@ -9,33 +9,34 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
     
-    private var personsList = Person.getPersonList()
-
+    private var persons = DataManager.getPersonList()
 
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        DataManager.dataManager.names.count
+        persons.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        var content = cell.defaultContentConfiguration()
-        let person = personsList[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personName", for: indexPath)
         
-        content.text = person.fullName
-        cell.contentConfiguration = content
+        let personName = persons[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        content.text = personName.name + " " + personName.surname
 
+        cell.contentConfiguration = content
         return cell
     }
 
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailsVC = segue.destination as? DetailsViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        let selectedPerson = persons[indexPath.row]
         
-        let person = personsList[indexPath.row]
-        detailsVC.person = person
+        detailsVC.personInfo = selectedPerson
     }
+
 }
+

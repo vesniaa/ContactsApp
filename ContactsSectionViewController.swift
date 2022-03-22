@@ -9,35 +9,50 @@ import UIKit
 
 class ContactsSectionViewController: UITableViewController {
 
-    private var personsList = Person.getPersonList()
+    private var personsList = DataManager.getPersonList()
     
+    var persons = DataManager.getPersonList()
+   
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Persons List"
+    }
+
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return personsList.count
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let person = personsList[section]
-        return person.fullName
+        persons.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        3
     }
     
-    //MARK: - Email and Phone
-
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sectionTrackID", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "structPerson", for: indexPath)
+        
         var content = cell.defaultContentConfiguration()
-        let person = personsList[indexPath.row]
         
-        content.text = person.email
-        content.text = person.phone
-        
+        switch indexPath.row {
+        case 0:
+            content.text = persons[indexPath.section].name + " " + persons[indexPath.section].surname
+        case 1:
+            content.text = persons[indexPath.section].phone
+            content.image = UIImage(systemName: "phone")
+        default:
+            content.text = persons[indexPath.section].email
+            content.image = UIImage(systemName: "mail")
+        }
         cell.contentConfiguration = content
-
         return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        if indexPath.row == 0 {
+            cell.backgroundColor = .lightGray
+        }
     }
 }
