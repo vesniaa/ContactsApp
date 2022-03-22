@@ -1,5 +1,5 @@
 //
-//  ContactsSectionsTableViewController.swift
+//  ContactsSectionViewController.swift
 //  ContactsApp
 //
 //  Created by Евгения Аникина on 22.03.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactsSectionsTableViewController: UITableViewController {
+class ContactsSectionViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
