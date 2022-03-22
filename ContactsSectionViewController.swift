@@ -47,12 +47,4 @@ class ContactsSectionViewController: UITableViewController {
         cell.contentConfiguration = content
         return cell
     }
-    
-    
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
-        if indexPath.row == 0 {
-            cell.backgroundColor = .lightGray
-        }
-    }
 }
