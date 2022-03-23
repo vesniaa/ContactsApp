@@ -22,10 +22,14 @@ class ContactsTableViewController: UITableViewController {
         
         let personName = persons[indexPath.row]
         var content = cell.defaultContentConfiguration()
+        
         content.text = personName.name + " " + personName.surname
+        content.image = UIImage(named: personName.title)
 
         cell.contentConfiguration = content
+        
         return cell
+        
     }
 
     // MARK: - Navigation
@@ -40,3 +44,8 @@ class ContactsTableViewController: UITableViewController {
 
 }
 
+extension ContactsTableViewController {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
+}
