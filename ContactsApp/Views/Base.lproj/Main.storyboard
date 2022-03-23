@@ -123,34 +123,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lAF-uf-mqI">
-                                <rect key="frame" x="20" y="111" width="280" height="73"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lAF-uf-mqI">
+                                <rect key="frame" x="20" y="111" width="280" height="375"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O0R-eQ-2ID">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="282"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whX-jo-k6d">
-                                        <rect key="frame" x="0.0" y="0.0" width="61" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="302" width="280" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWS-Ys-qsa">
-                                        <rect key="frame" x="0.0" y="46.5" width="51.5" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="348.5" width="280" height="26.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="Ldr-dr-ZBq"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lBo-M6-Czh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lAF-uf-mqI" firstAttribute="top" secondItem="wQH-bC-JvO" secondAttribute="topMargin" constant="20" id="O6f-rV-aFG"/>
-                            <constraint firstItem="lAF-uf-mqI" firstAttribute="leading" secondItem="lBo-M6-Czh" secondAttribute="leading" constant="20" id="a7m-Q9-oHJ"/>
-                            <constraint firstItem="lBo-M6-Czh" firstAttribute="trailing" secondItem="lAF-uf-mqI" secondAttribute="trailing" constant="20" id="ncG-Qj-txG"/>
+                            <constraint firstItem="lBo-M6-Czh" firstAttribute="trailing" secondItem="lAF-uf-mqI" secondAttribute="trailing" constant="20" id="8rk-gd-ymw"/>
+                            <constraint firstItem="lAF-uf-mqI" firstAttribute="leading" secondItem="lBo-M6-Czh" secondAttribute="leading" constant="20" id="WWI-ti-yeg"/>
+                            <constraint firstItem="lAF-uf-mqI" firstAttribute="top" secondItem="lBo-M6-Czh" secondAttribute="top" constant="20" id="ltT-gn-Ve0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ckq-wb-Wem"/>
                     <connections>
+                        <outlet property="contactsImageView" destination="O0R-eQ-2ID" id="e2z-DM-6s1"/>
                         <outlet property="emailLabel" destination="dWS-Ys-qsa" id="xdf-ti-ZB2"/>
                         <outlet property="phoneLabel" destination="whX-jo-k6d" id="Jbu-Lj-CqU"/>
                     </connections>

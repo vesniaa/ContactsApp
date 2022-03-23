@@ -11,6 +11,7 @@ class DetailsViewController: UIViewController {
 
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet var contactsImageView: UIImageView!
     
     var personInfo: Person!
     
@@ -18,7 +19,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         
         title = personInfo.name + " " + personInfo.surname
-        
+        contactsImageView.image = UIImage(named: personInfo.title)
         phoneLabel.text = "phone: " + personInfo.phone
         emailLabel.text = "email: " + personInfo.email
     }
