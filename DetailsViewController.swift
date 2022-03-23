@@ -20,7 +20,7 @@ class DetailsViewController: UIViewController {
         
         title = personInfo.name + " " + personInfo.surname
         contactsImageView.image = UIImage(named: personInfo.title)
-        phoneLabel.text = "phone: " + personInfo.phone
-        emailLabel.text = "email: " + personInfo.email
+        phoneLabel.text = "Phone: " + personInfo.phone
+        emailLabel.text = "Email: " + personInfo.email
     }
 }

@@ -31,7 +31,6 @@ class ContactsSectionViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "structPerson", for: indexPath)
-        
         var content = cell.defaultContentConfiguration()
         
         switch indexPath.row {

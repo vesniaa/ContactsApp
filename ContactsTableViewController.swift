@@ -17,7 +17,6 @@ class ContactsTableViewController: UITableViewController {
     private var persons = DataManager.getPersonList()
 
     // MARK: - Table view data source
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         persons.count
     }
@@ -34,18 +33,11 @@ class ContactsTableViewController: UITableViewController {
     }
 
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let detailsVC = segue.destination as? DetailsViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let selectedPerson = persons[indexPath.row]
-        
         detailsVC.personInfo = selectedPerson
     }
-
 }
 
-/*extension ContactsTableViewController {
-    
-    }
-}*/
